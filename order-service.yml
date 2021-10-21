@@ -1,0 +1,25 @@
+server:
+  port: 9091
+spring:
+  application:
+    name: ORDER-SERVICE
+  h2:
+    console:
+      enabled: true
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:testdb
+    username: sa
+    password:
+
+# This is our client so we set register to true
+# We need to specifiy the url where we have our erureka surver running
+eureka:
+ client:
+   register-with-eureka: true
+   fetch-registry: true
+   service-url:
+     defaultZone: http://localhost:8761/eureka
+ instance:
+   hostname: localhost
+commented out once using config server
